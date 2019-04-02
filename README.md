@@ -32,3 +32,21 @@ The benefits is end user can just pay for those feature he/she want. E.g., user 
 A good idea is to put those active features into a XML list and use this list as the license file. However, the next question is how to protect this license file since it is juat a plain text XML. Finally the digital signature solution answers the question.
 
 ![alt text](https://www.codeproject.com/KB/security/996001/High_Level_Process.png)
+
+Notes:
+
+End User Application generates the Unique ID for the current PC.
+Unique ID will be passed to License Issuer. This shall be a offline step which may include additional actions such as purchase and payment.
+License Issuer issue the license file based on the Unique ID and license options. I.e., decide to enable which features based on the purchase and payment.
+Send back the license file to end user. This is also a offline step, maybe by mails or USB drivers.
+End User Application verify the license file and startup.
+Unique ID for the device
+For now, this solution is only used on PC, also including servers & laptops. It has not been used in mobile devices yet. I think the algorithm to get unique ID for mobile devices shall be different. Here we just talk about PC first.
+
+The unique ID for a PC contains 4 parts:
+
+Application Name
+Processor ID
+Motherboard Serial Number
+Disk Volume Serial Number of Drive C
+The 4 parts are concatenated as strings, then checksum is generated via MD5. And BASE36 encoding is used to format the checksum into a string like "XXXX-XXXX-XXXX-XXXX" for easier reading and transferring.
