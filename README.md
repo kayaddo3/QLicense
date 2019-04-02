@@ -30,3 +30,5 @@ I was working on a project that is a system having many key features, which are 
 The benefits is end user can just pay for those feature he/she want. E.g., user A can only pay for feature A, B & C; while user B only want feature A & C, and user C may only pay for feature B.
 
 A good idea is to put those active features into a XML list and use this list as the license file. However, the next question is how to protect this license file since it is juat a plain text XML. Finally the digital signature solution answers the question.
+
+![alt text](https://www.codeproject.com/KB/security/996001/High_Level_Process.png)
